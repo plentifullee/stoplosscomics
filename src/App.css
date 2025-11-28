@@ -448,11 +448,14 @@ body.no-scroll {
     max-width: 100vw;
     max-height: 100vh;
     border-radius: 0;
-    padding: calc(16px + env(safe-area-inset-top, 0px)) 12px
+    padding: calc(36px + env(safe-area-inset-top, 0px)) 12px
       calc(16px + env(safe-area-inset-bottom, 0px));
   }
 
   .fullscreen-image {
-    max-height: 60vh; /* give more room for title + buttons */
+    max-height: 80vh; /* give more room for title + buttons */
+  }
+  .fullscreen-close {
+    top: calc(36px + env(safe-area-inset-top, 0px));
   }
 }
