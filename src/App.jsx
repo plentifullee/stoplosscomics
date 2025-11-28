@@ -185,7 +185,7 @@ function App() {
       <header className="app-header">
         <div className="logo-container">
           <img
-            src="/logo.png"
+            src="logo.png"
             alt="StopLossComics"
             className="app-logo"
           />
