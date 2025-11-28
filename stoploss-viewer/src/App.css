@@ -1,0 +1,436 @@
+/* src/App.css */
+
+/* Global reset */
+:root {
+  /* Force light theme – prevents auto dark-mode styling */
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Make sure the root node can stretch full width */
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: #fff8e6;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Header */
+
+.app-header {
+  width: 100%;
+  padding: 16px 24px 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111111;
+}
+
+.app-subtitle {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+/* ----------------------------- */
+/* HEADER STYLING                */
+/* ----------------------------- */
+
+.app-header {
+  width: 100%;
+  padding: 16px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* center on mobile */
+  text-align: center;
+  gap: 6px;
+}
+
+/* Logo container adapts to screen size */
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* The logo image */
+.app-logo {
+  height: 70px;       /* Perfect for your bubble logo */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Subtitle styling */
+.app-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  color: #6a6a6a;
+  text-transform: uppercase;
+}
+
+/* ----------------------------- */
+/* DESKTOP ENHANCEMENTS          */
+/* ----------------------------- */
+
+@media (min-width: 768px) {
+  .app-header {
+    flex-direction: row;         /* row on desktop */
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .logo-container {
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .app-subtitle {
+    font-size: 14px;
+    margin-left: auto;
+  }
+}
+
+
+/* Tabs + search + layout */
+
+.tabs-container {
+  width: 100%;
+  padding: 4px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* First row: tabs + search */
+.tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Second row: layout buttons */
+.layout-row {
+  display: flex;
+  justify-content: flex-end; /* or flex-end if you want them right-aligned */
+}
+
+
+.tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab-button {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  background-color: #f0e1c8;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.tab-button:hover {
+  transform: translateY(-1px);
+  background-color: #e5d3b9;
+}
+
+.tab-button-active {
+  background-color: #000;
+  color: #fff8e6;
+}
+
+/* Layout switcher */
+
+.layout-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.layout-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.layout-switcher {
+  display: inline-flex;
+  background-color: #f0e1c8;
+  border-radius: 999px;
+  padding: 2px;
+  gap: 2px;
+}
+
+.layout-button {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  background: transparent;
+  color: #555;
+  cursor: pointer;
+}
+
+.layout-button-active {
+  background-color: #000;
+  color: #fff8e6;
+}
+
+.search-wrapper {
+  margin-left: auto;
+  flex: 1;
+  max-width: 260px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #d2bfa0;
+  font-size: 13px;
+  outline: none;
+  background-color: #ffffff;
+  color: #222222;
+}
+
+.search-input:focus {
+  border-color: #000;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+/* Gallery grid – layouts */
+
+.gallery {
+  width: 100%;
+  padding: 8px 24px 32px;
+  display: grid;
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Compact: more items per row */
+.gallery-compact {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* Grid: default medium density */
+.gallery-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Single: one big column (centered) */
+.gallery-single {
+  grid-template-columns: minmax(0, 520px);
+  justify-content: center;
+}
+
+/* On small screens, all layouts collapse to single column */
+@media (max-width: 640px) {
+  .gallery-compact,
+  .gallery-grid,
+  .gallery-single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Cards */
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+/* Image wrapper – height controlled by variant classes below */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Portrait cards (comic, art) – 2:3 ratio (1024x1536) */
+.card-portrait .card-image-wrapper {
+  padding-top: 150%;
+}
+
+/* Square cards (nft, token) – 1:1 ratio (e.g. 1024x1024) */
+.card-square .card-image-wrapper {
+  padding-top: 100%;
+}
+
+.card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Load more button */
+
+.load-more-button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #000;
+  color: #fff8e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.load-more-button:hover {
+  opacity: 0.9;
+}
+
+/* Fullscreen viewer */
+
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.fullscreen-content {
+  position: relative;
+  max-width: 960px;
+  width: 90vw;
+  max-height: 90vh;
+  background: #111;
+  border-radius: 16px;
+  padding: 16px 16px 20px;
+  display: flex;
+  flex-direction: column;
+  color: #f8f8f8;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Fullscreen image */
+
+.fullscreen-image-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  touch-action: pan-y;
+}
+
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Fullscreen text */
+
+.fullscreen-meta {
+  margin-top: 8px;
+}
+
+.fullscreen-title {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.fullscreen-description {
+  margin: 0;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+.description-link {
+  color: #4da3ff;
+  text-decoration: underline;
+}
+
+.description-link:hover {
+  opacity: 0.8;
+}
+
+/* Fullscreen navigation */
+
+.fullscreen-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.fullscreen-nav-button {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #f0e1c8;
+  color: #222;
+}
+
+.fullscreen-nav-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .layout-row {
+    display: none;
+  }
+}

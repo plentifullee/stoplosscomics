@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StopLossComics</string>
+    <string name="title_activity_main">StopLossComics</string>
+    <string name="package_name">com.stoplosscomics.app</string>
+    <string name="custom_url_scheme">com.stoplosscomics.app</string>
+</resources>
