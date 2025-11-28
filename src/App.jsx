@@ -122,20 +122,17 @@ function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   });
 
+  // Lock body scroll when fullscreen is open
   useEffect(() => {
-    // lock body scroll when fullscreen is open
     if (fullscreenIndex !== null) {
       document.body.classList.add("no-scroll");
     } else {
       document.body.classList.remove("no-scroll");
     }
-
-    // cleanup in case component unmounts
     return () => {
       document.body.classList.remove("no-scroll");
     };
   }, [fullscreenIndex]);
-
 
   // Filtering
   const query = searchQuery.toLowerCase().trim();
@@ -156,12 +153,6 @@ function App() {
   const handleCardClick = (id) => {
     const index = filteredItems.findIndex((item) => item.id === id);
     if (index !== -1) setFullscreenIndex(index);
-    if (window.gtag) {
-      window.gtag("event", "comic_open", {
-        id,
-        category: activeTab,
-      });
-    }
   };
 
   const closeFullscreen = () => setFullscreenIndex(null);
@@ -210,16 +201,11 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="logo-container">
-          <img
-            src="logo.png"
-            alt="StopLossComics"
-            className="app-logo"
-          />
+          <img src="/logo.png" alt="StopLossComics" className="app-logo" />
         </div>
 
         <div className="app-subtitle">COMICS &amp; ART VIEWER</div>
       </header>
-
 
       {/* Tabs + search + layout switcher */}
       <div className="tabs-container">
@@ -230,19 +216,10 @@ function App() {
               <button
                 key={tab.id}
                 className={
-                  "tab-button" + (activeTab === tab.id ? " tab-button-active" : "")
+                  "tab-button" +
+                  (activeTab === tab.id ? " tab-button-active" : "")
                 }
-                onClick={() => {
-                  setActiveTab(tab.id);
-
-                  if (window.gtag) {
-                    window.gtag("event", "tab_view", {
-                      tab_id: tab.id,
-                      tab_label: tab.label,
-                    });
-                  }
-                }}
-
+                onClick={() => setActiveTab(tab.id)}
               >
                 {tab.label}
               </button>
@@ -255,16 +232,7 @@ function App() {
               className="search-input"
               placeholder="Search..."
               value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-
-                if (window.gtag) {
-                  window.gtag("event", "search", {
-                    query: e.target.value
-                  });
-                }
-              }}
-
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
@@ -290,7 +258,6 @@ function App() {
           </div>
         </div>
       </div>
-
 
       {/* Loading / error */}
       {loading && (
@@ -354,43 +321,45 @@ function App() {
               ✕
             </button>
 
-            <div
-              className="fullscreen-image-wrapper"
-              onPointerDown={handlePointerDown}
-              onPointerUp={handlePointerUp}
-              onPointerCancel={handlePointerCancel}
-            >
-              <img
-                src={currentItem.imageUrl}
-                alt={currentItem.title}
-                className="fullscreen-image"
-              />
-            </div>
-
-            <div className="fullscreen-nav">
-              <button
-                className="fullscreen-nav-button"
-                onClick={showPrev}
-                disabled={fullscreenIndex === 0}
+            <div className="fullscreen-inner">
+              <div
+                className="fullscreen-image-wrapper"
+                onPointerDown={handlePointerDown}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerCancel}
               >
-                ← Prev
-              </button>
-              <button
-                className="fullscreen-nav-button"
-                onClick={showNext}
-                disabled={fullscreenIndex === filteredItems.length - 1}
-              >
-                Next →
-              </button>
-            </div>
+                <img
+                  src={currentItem.imageUrl}
+                  alt={currentItem.title}
+                  className="fullscreen-image"
+                />
+              </div>
 
-            <div className="fullscreen-meta">
-              <h2 className="fullscreen-title">{currentItem.title}</h2>
-              {currentItem.description && (
-                <p className="fullscreen-description">
-                  {linkify(currentItem.description)}
-                </p>
-              )}
+              <div className="fullscreen-meta">
+                <h2 className="fullscreen-title">{currentItem.title}</h2>
+                {currentItem.description && (
+                  <p className="fullscreen-description">
+                    {linkify(currentItem.description)}
+                  </p>
+                )}
+              </div>
+
+              <div className="fullscreen-nav">
+                <button
+                  className="fullscreen-nav-button"
+                  onClick={showPrev}
+                  disabled={fullscreenIndex === 0}
+                >
+                  ← Prev
+                </button>
+                <button
+                  className="fullscreen-nav-button"
+                  onClick={showNext}
+                  disabled={fullscreenIndex === filteredItems.length - 1}
+                >
+                  Next →
+                </button>
+              </div>
             </div>
           </div>
         </div>
