@@ -136,6 +136,12 @@ function App() {
   const handleCardClick = (id) => {
     const index = filteredItems.findIndex((item) => item.id === id);
     if (index !== -1) setFullscreenIndex(index);
+    if (window.gtag) {
+      window.gtag("event", "comic_open", {
+        id,
+        category: activeTab,
+      });
+    }
   };
 
   const closeFullscreen = () => setFullscreenIndex(null);
@@ -206,7 +212,17 @@ function App() {
                 className={
                   "tab-button" + (activeTab === tab.id ? " tab-button-active" : "")
                 }
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => {
+                  setActiveTab(tab.id);
+
+                  if (window.gtag) {
+                    window.gtag("event", "tab_view", {
+                      tab_id: tab.id,
+                      tab_label: tab.label,
+                    });
+                  }
+                }}
+
               >
                 {tab.label}
               </button>
@@ -219,7 +235,16 @@ function App() {
               className="search-input"
               placeholder="Search..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+
+                if (window.gtag) {
+                  window.gtag("event", "search", {
+                    query: e.target.value
+                  });
+                }
+              }}
+
             />
           </div>
         </div>
