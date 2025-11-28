@@ -122,6 +122,21 @@ function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   });
 
+  useEffect(() => {
+    // lock body scroll when fullscreen is open
+    if (fullscreenIndex !== null) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    // cleanup in case component unmounts
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [fullscreenIndex]);
+
+
   // Filtering
   const query = searchQuery.toLowerCase().trim();
 
