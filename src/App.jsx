@@ -39,6 +39,11 @@ function linkify(text) {
 
   return text.split(urlRegex).map((part, index) => {
     if (part.match(urlRegex)) {
+      const label =
+        part.includes("x.com") || part.includes("twitter.com")
+          ? "View on X"
+          : part;
+
       return (
         <a
           key={index}
@@ -47,7 +52,7 @@ function linkify(text) {
           rel="noopener noreferrer"
           className="description-link"
         >
-          {part}
+          {label}
         </a>
       );
     }
