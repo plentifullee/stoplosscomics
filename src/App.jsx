@@ -7,13 +7,13 @@ const PAGE_SIZE = 12;
 // JSON sources per category
 const DATA_SOURCES = {
   comic:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/comic.json",
+    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/comic.json",
   art:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/art.json",
+    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/art.json",
   nft:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/nft.json",
+    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/nft.json",
   token:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/token.json",
+    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/token.json",
 };
 
 const TABS = [
