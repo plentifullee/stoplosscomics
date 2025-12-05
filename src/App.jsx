@@ -302,7 +302,7 @@ function App() {
           <main className={`gallery gallery-${layout}`}>
             {(() => {
               const galleryItems = [];
-              const AD_FREQUENCY = 6; // show 1 ad after every 6 items
+              const AD_FREQUENCY = 0; // show 1 ad after every 6 items
 
               visibleItems.forEach((item, index) => {
                 galleryItems.push({ type: "item", item });
