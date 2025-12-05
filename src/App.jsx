@@ -60,6 +60,33 @@ function linkify(text) {
   });
 }
 
+function AdCard() {
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      console.error("AdSense error", e);
+    }
+  }, []);
+
+  return (
+    <article className="card card-ad">
+      <div className="card-image-wrapper card-ad-wrapper">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-7734347763155686"
+          data-ad-slot="6961066534"
+          data-ad-format="fluid"
+          data-ad-layout="in-article"
+          data-full-width-responsive="true"
+        />
+      </div>
+    </article>
+  );
+}
+
+
 function App() {
   const [items, setItems] = useState([]);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -273,23 +300,45 @@ function App() {
       {!loading && !error && (
         <>
           <main className={`gallery gallery-${layout}`}>
-            {visibleItems.map((item) => (
-              <article
-                key={item.id}
-                className={`card ${isSquare ? "card-square" : "card-portrait"}`}
-                onClick={() => handleCardClick(item.id)}
-              >
-                <div className="card-image-wrapper">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.title}
-                    className="card-image"
-                    loading="lazy"
-                  />
-                </div>
-              </article>
-            ))}
+            {(() => {
+              const galleryItems = [];
+              const AD_FREQUENCY = 6; // show 1 ad after every 6 items
+
+              visibleItems.forEach((item, index) => {
+                galleryItems.push({ type: "item", item });
+
+                // insert ad after every 6 items
+                if ((index + 1) % AD_FREQUENCY === 0) {
+                  galleryItems.push({ type: "ad", id: `ad-${index}` });
+                }
+              });
+
+              return galleryItems.map((entry) => {
+                if (entry.type === "ad") {
+                  return <AdCard key={entry.id} />;
+                }
+
+                const item = entry.item;
+                return (
+                  <article
+                    key={item.id}
+                    className={`card ${isSquare ? "card-square" : "card-portrait"}`}
+                    onClick={() => handleCardClick(item.id)}
+                  >
+                    <div className="card-image-wrapper">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="card-image"
+                        loading="lazy"
+                      />
+                    </div>
+                  </article>
+                );
+              });
+            })()}
           </main>
+
 
           {!visibleItems.length && (
             <p style={{ textAlign: "center", padding: 20 }}>

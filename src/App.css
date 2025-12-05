@@ -281,6 +281,35 @@ body.no-scroll {
   object-fit: cover;
 }
 
+/* Ad card styling */
+
+.card-ad {
+  position: relative;
+  background-color: #fff8e6; /* matches your app background */
+}
+
+/* Override the aspect-ratio padding for ad cards */
+.card-ad .card-image-wrapper,
+.card-ad-wrapper {
+  padding-top: 0;
+  height: auto;
+  min-height: 150px; /* gives the in-article ad some vertical space */
+}
+
+/* Optional tiny "Ad" label in the corner */
+.card-ad::after {
+  content: "Ad";
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 11px;
+  color: #888;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+
 /* Load more button */
 
 .load-more-button {
