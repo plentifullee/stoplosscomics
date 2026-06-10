@@ -2,8 +2,7 @@
   {
     "id": "149",
     "title": "Yoyocoin Protocol",
-    "imageUrl": "https://pbs.twimg.com/media/G7nlCgHaMAAAsVB?format=jpg&name=large",
-    "description": "https://x.com/StopLossComics/status/1997880568663720380?s=20git"
+    "imageUrl": "./comic/149.png"
   },
   {
     "id": "148",
@@ -470,7 +469,6 @@
   {
     "id": "71",
     "title": "Cancelling The Inflation",
-    "imageUrl": "./comic/71.png",
-    "description": "https://x.com/StopLossComics/status/1980514426764894336?s=20"
+    "imageUrl": "./comic/71.png"
   }
 ]
