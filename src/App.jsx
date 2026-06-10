@@ -41,7 +41,7 @@ function linkify(text) {
     if (part.match(urlRegex)) {
       const label =
         part.includes("x.com") || part.includes("twitter.com")
-          ? "View on X"
+          ? "View more"
           : part;
 
       return (
