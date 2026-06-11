@@ -488,3 +488,27 @@ body.no-scroll {
     top: calc(36px + env(safe-area-inset-top, 0px));
   }
 }
+
+/* art categories */
+.art-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.art-subtab-button {
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: #f0e1c8;
+  color: #444;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.art-subtab-button-active {
+  background: #000;
+  color: #fff8e6;
+}

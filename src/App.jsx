@@ -31,6 +31,7 @@ const LAYOUTS = [
 
 const SWIPE_THRESHOLD = 50; // pixels
 
+
 // Convert URLs inside plain text into React clickable links
 function linkify(text) {
   if (!text) return text;
@@ -101,6 +102,21 @@ function App() {
 
   const [layout, setLayout] = useState("grid"); // compact | grid | single
 
+  const [artCategory, setArtCategory] = useState("all"); // art categories
+
+  const ART_CATEGORIES = [
+    { id: "all", label: "All" },
+    { id: "fanart", label: "Fan Art" },
+    { id: "wallpaper", label: "Wallpapers" },
+    { id: "card", label: "Trading Cards" },
+    { id: "anime", label: "Anime" },
+    { id: "pixel", label: "Pixel" },
+    { id: "meme", label: "Meme" },
+    { id: "ai", label: "AI" },
+    { id: "sketch", label: "Sketches" },
+    { id: "misc", label: "Misc" },
+  ];
+
   // Load JSON for the active tab
   useEffect(() => {
     async function loadData() {
@@ -165,16 +181,38 @@ function App() {
   const query = searchQuery.toLowerCase().trim();
 
   const filteredItems = items.filter((item) => {
-    if (!query) return true;
     const title = (item.title || "").toLowerCase();
     const description = (item.description || "").toLowerCase();
-    return title.includes(query) || description.includes(query);
+
+    const searchMatch =
+      !query ||
+      title.includes(query) ||
+      description.includes(query);
+
+    const categoryMatch =
+      activeTab !== "art" ||
+      artCategory === "all" ||
+      item.category === artCategory;
+
+    return searchMatch && categoryMatch;
   });
 
   const visibleItems = filteredItems.slice(0, visibleCount);
   const hasMore = visibleCount < filteredItems.length;
 
   const isSquare = activeTab === "nft" || activeTab === "token";
+
+  const artCategories =
+    activeTab === "art"
+      ? [
+          "all",
+          ...new Set(
+            items
+              .map((item) => item.category)
+              .filter(Boolean)
+          ),
+        ]
+      : [];
 
   // Open fullscreen for clicked card
   const handleCardClick = (id) => {
@@ -246,7 +284,10 @@ function App() {
                   "tab-button" +
                   (activeTab === tab.id ? " tab-button-active" : "")
                 }
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setArtCategory("all");
+                }}
               >
                 {tab.label}
               </button>
@@ -263,6 +304,25 @@ function App() {
             />
           </div>
         </div>
+        
+        {activeTab === "art" && (
+          <div className="art-categories">
+            {artCategories.map((cat) => (
+              <button
+                key={cat}
+                className={
+                  "art-category-button" +
+                  (artCategory === cat
+                    ? " art-category-button-active"
+                    : "")
+                }
+                onClick={() => setArtCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Second row: layout controls (hidden on mobile via CSS) */}
         <div className="layout-row">
