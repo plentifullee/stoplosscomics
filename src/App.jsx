@@ -307,21 +307,26 @@ function App() {
         </div>
 
         {activeTab === "art" && (
-          <div className="art-categories">
-            {artCategories.map((cat) => (
-              <button
-                key={cat}
-                className={
-                  "art-category-button" +
-                  (artCategory === cat
-                    ? " art-category-button-active"
-                    : "")
-                }
-                onClick={() => setArtCategory(cat)}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="art-categories-wrapper">
+            <div className="art-categories-label">
+              Art Categories
+            </div>
+            <div className="art-categories">
+              {artCategories.map((cat) => (
+                <button
+                  key={cat}
+                  className={
+                    "art-category-button" +
+                    (artCategory === cat
+                      ? " art-category-button-active"
+                      : "")
+                  }
+                  onClick={() => setArtCategory(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
