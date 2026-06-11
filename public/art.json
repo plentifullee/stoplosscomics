@@ -86,63 +86,61 @@
   {
     "id": "gm-0010",
     "title": "Building Before Breakfast",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/10.png"
   },
   {
     "id": "gm-0009",
     "title": "Too Early For Volatility",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/9.png"
   },
   {
     "id": "gm-0008",
     "title": "No Pain No Gain",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/8.png"
   },
   {
     "id": "gm-0007",
     "title": "I Made You Coffee",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/7.png"
   },
   {
     "id": "gm-0006",
     "title": "Time To Hustle",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/6.png"
   },
   {
     "id": "gm-0005",
     "title": "Peak Energy",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/5.png"
   },
   {
     "id": "gm-0004",
     "title": "Let's Get To Work",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/4.png"
   },
   {
     "id": "gm-0003",
     "title": "Early Cat Catches The Dip",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/3.png"
   },
   {
     "id": "gm-0002",
     "title": "GM Ape Strong",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/2.png"
   },
   {
     "id": "gm-0001",
     "title": "GM",
-    "category": "team",
+    "category": "gm",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/gm/1.png"
   }
-
-
 ]
