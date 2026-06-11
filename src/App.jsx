@@ -267,7 +267,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <div className="logo-container">
-          <img src="/logo.png" alt="StopLossComics" className="app-logo" />
+          <img src="/logo.webp" alt="StopLossComics" className="app-logo" />
         </div>
 
         <div className="app-subtitle">COMICS &amp; ART VIEWER</div>
