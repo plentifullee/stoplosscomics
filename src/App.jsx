@@ -7,13 +7,13 @@ const PAGE_SIZE = 12;
 // JSON sources per category
 const DATA_SOURCES = {
   comic:
-    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/comic.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics@main/public/comic.json",
   art:
-    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/art.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics@main/public/art.json",
   nft:
-    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/nft.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics@main/public/nft.json",
   token:
-    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/token.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics@main/public/token.json",
 };
 
 const TABS = [
@@ -368,7 +368,7 @@ function App() {
           <main className={`gallery gallery-${layout}`}>
             {(() => {
               const galleryItems = [];
-              const AD_FREQUENCY = 0; // show 1 ad after every 6 items
+              const AD_FREQUENCY = Infinity; // show 1 ad after every 6 items
 
               visibleItems.forEach((item, index) => {
                 galleryItems.push({ type: "item", item });
@@ -379,7 +379,7 @@ function App() {
                 }
               });
 
-              return galleryItems.map((entry) => {
+              return galleryItems.map((entry, index) => {
                 if (entry.type === "ad") {
                   return <AdCard key={entry.id} />;
                 }
