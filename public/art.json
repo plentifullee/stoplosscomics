@@ -2,19 +2,19 @@
   {
     "id": "2",
     "title": "Chadman The Mighty - This Diwali Smash FUD Like Chadman",
-    "categories": "Wallpapers",
+    "category": "Wallpapers",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/2.png"
   },
   {
     "id": "1",
     "title": "Buy Us A Coffee",
-    "categories": "Trading Cards",
+    "category": "Trading Cards",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/1.png"
   },
   {
     "id": "0",
     "title": "StopLossComics 2025 Roadmap",
-    "categories": "Anime",
+    "category": "Anime",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/art/0.png"
   }
 ]
