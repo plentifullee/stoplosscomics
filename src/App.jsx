@@ -104,18 +104,18 @@ function App() {
 
   const [artCategory, setArtCategory] = useState("all"); // art categories
 
-  const ART_CATEGORIES = [
-    { id: "all", label: "All" },
-    { id: "fanart", label: "Fan Art" },
-    { id: "wallpaper", label: "Wallpapers" },
-    { id: "card", label: "Trading Cards" },
-    { id: "anime", label: "Anime" },
-    { id: "pixel", label: "Pixel" },
-    { id: "meme", label: "Meme" },
-    { id: "ai", label: "AI" },
-    { id: "sketch", label: "Sketches" },
-    { id: "misc", label: "Misc" },
-  ];
+  // const ART_CATEGORIES = [
+  //   { id: "all", label: "All" },
+  //   { id: "fanart", label: "Fan Art" },
+  //   { id: "wallpaper", label: "Wallpapers" },
+  //   { id: "card", label: "Trading Cards" },
+  //   { id: "anime", label: "Anime" },
+  //   { id: "pixel", label: "Pixel" },
+  //   { id: "meme", label: "Meme" },
+  //   { id: "ai", label: "AI" },
+  //   { id: "sketch", label: "Sketches" },
+  //   { id: "misc", label: "Misc" },
+  // ];
 
   // Load JSON for the active tab
   useEffect(() => {
@@ -213,6 +213,7 @@ function App() {
           ),
         ]
       : [];
+  console.log("Art categories:", artCategories);
 
   // Open fullscreen for clicked card
   const handleCardClick = (id) => {
@@ -304,7 +305,7 @@ function App() {
             />
           </div>
         </div>
-        
+
         {activeTab === "art" && (
           <div className="art-categories">
             {artCategories.map((cat) => (
