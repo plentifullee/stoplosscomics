@@ -7,13 +7,13 @@ const PAGE_SIZE = 12;
 // JSON sources per category
 const DATA_SOURCES = {
   comic:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/comic.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/comic.json",
   art:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/art.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/art.json",
   nft:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/nft.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/nft.json",
   token:
-    "https://raw.githubusercontent.com/plentifullee/stoplosscomics/refs/heads/main/public/token.json",
+    "https://cdn.jsdelivr.net/gh/plentifullee/stoplosscomics/public/token.json",
 };
 
 const TABS = [
@@ -396,7 +396,8 @@ function App() {
                         src={item.imageUrl}
                         alt={item.title}
                         className="card-image"
-                        loading="lazy"
+                        loading={index === 0 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : "auto"}
                       />
                     </div>
                   </article>
