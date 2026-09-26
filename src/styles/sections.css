@@ -1,0 +1,158 @@
+.page-section { margin-block: 65px; scroll-margin-top: 25px; }
+.section-heading-row { display: flex; justify-content: space-between; align-items: center; gap: 25px; margin-bottom: 28px; }
+.section-title { font: 700 clamp(34px, 4vw, 54px)/1.05 'Fredoka', sans-serif; text-transform: uppercase; letter-spacing: -1px; margin: 0; width: fit-content; }
+.section-title.brush-heading::before { background: var(--yellow); inset: 1px -10px -4px; }
+.section-title.blue-brush::before { background: var(--blue); }
+.section-subtitle { margin: 15px 0 0; font-size: 15px; font-weight: 800; }
+.margin-note { margin: 0 15px 0 0; font-size: 12px; line-height: 1.3; font-weight: 900; text-transform: uppercase; transform: rotate(-7deg); }
+.margin-note span { display: inline-block; font-size: 36px; vertical-align: middle; }
+.character-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.character-card { background: #ffe59a; border: var(--comic-border); border-radius: 12px; overflow: hidden; box-shadow: 4px 4px 0 #191a15; transform: rotate(-1deg); }
+.character-card:nth-child(2n) { transform: rotate(1deg); }
+.character-luna { background: #b3dfed; }
+.character-chad { background: #ffb05d; }
+.character-satoshi { background: #ffd06a; }
+.portrait-frame { position: relative; aspect-ratio: 1.2; overflow: hidden; background: var(--paper); border-bottom: 2px solid var(--ink); }
+.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.character-satoshi img { object-position: center 28%; }
+.character-doodle { position: absolute; top: 9px; right: 12px; font: 700 36px 'Fredoka', sans-serif; transform: rotate(12deg); color: #59442e; }
+.character-copy { padding: 17px 18px 21px; min-height: 139px; background-image: radial-gradient(#191a1512 1px, transparent 1px); background-size: 6px 6px; }
+.character-copy h3 { font: 700 29px 'Fredoka', sans-serif; text-transform: uppercase; margin: 0 0 6px; }
+.character-copy p { font-size: 14px; font-weight: 800; line-height: 1.4; margin: 0; max-width: 230px; }
+.featured-section .comic-button { font-size: 16px; }
+.featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.featured-card { min-width: 0; background: var(--paper); border: var(--comic-border); border-radius: 10px; box-shadow: 4px 4px 0 var(--ink); text-decoration: none; overflow: hidden; transition: transform .16s; }
+.featured-card:hover { transform: translateY(-5px) rotate(-.5deg); }
+.featured-image { position: relative; aspect-ratio: 1.55; overflow: hidden; border-bottom: var(--comic-border); background: #ffe9ab; }
+.featured-image img { display: block; width: 100%; height: auto; }
+.read-sticker { position: absolute; bottom: 12px; right: 12px; border: 2px solid var(--ink); border-radius: 5px; background: var(--yellow); padding: 5px 10px; font-size: 11px; font-weight: 900; text-transform: uppercase; box-shadow: 2px 2px 0 var(--ink); }
+.featured-caption { display: flex; align-items: center; gap: 12px; padding: 16px; }
+.featured-caption > span:first-child { font: 700 24px 'Fredoka', sans-serif; color: #867353; }
+.featured-caption h3 { font: 700 17px/1.2 'Fredoka', sans-serif; text-transform: uppercase; margin: 0; }
+.featured-caption > span:last-child { margin-left: auto; font-size: 24px; }
+.book-section { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 45px; padding: 40px; border: var(--comic-border); border-radius: 20px; background: #ffedb1; background-image: radial-gradient(#e99e3130 1px, transparent 1px); background-size: 6px 6px; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); }
+.book-showcase { position: relative; isolation: isolate; min-height: 530px; display: flex; align-items: center; justify-content: center; }
+.book-showcase .comic-rays { width: 760px; z-index: -1; }
+.sales-cover { width: 65%; max-width: 325px; height: auto; transform: rotate(-9deg); border: 2px solid var(--ink); border-radius: 3px; box-shadow: -6px 3px 0 #b98439, -8px 4px 0 var(--ink), 15px 20px 0 #a46c3c20; }
+.sales-burst { top: 0; left: -15px; bottom: auto; width: 140px; height: 140px; transform: rotate(-16deg); }
+.sales-burst::before { background: var(--paper); }
+.book-spark { position: absolute; right: 5px; top: 30px; font-size: 80px; }
+.bonus-sticker { position: absolute; right: 0; bottom: 15px; background: var(--blue); border: var(--comic-border); border-radius: 8px; padding: 13px 18px; font: 700 20px/1.1 'Fredoka', sans-serif; transform: rotate(8deg); box-shadow: var(--comic-shadow); }
+.book-copy { position: relative; }
+.book-copy .section-title { font-size: clamp(50px, 6vw, 82px); margin-bottom: 25px; }
+.book-copy h3 { font: 700 25px/1.2 'Fredoka', sans-serif; text-transform: uppercase; margin: 0 0 15px; }
+.book-copy > p:not(.eyebrow):not(.book-byline) { font-size: 16px; line-height: 1.6; margin: 12px 0; }
+.book-copy > p:nth-of-type(2) { font-weight: 900; }
+.book-stats { display: flex; gap: 25px; margin: 25px 0; }
+.book-stats > div { padding-right: 20px; border-right: 2px solid #191a1530; }
+.book-stats > div:last-child { padding-right: 0; border: 0; }
+.book-stats dt { font: 700 38px 'Fredoka', sans-serif; }
+.book-stats dd { font-size: 10px; font-weight: 900; text-transform: uppercase; margin: 0; }
+.book-copy .comic-button { width: 100%; font-size: 19px; }
+.store-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.store-links a { flex: 1; display: flex; justify-content: center; gap: 10px; border: 2px solid var(--ink); border-radius: 7px; background: var(--paper); padding: 10px 8px; font-size: 11px; font-weight: 900; text-decoration: none; white-space: nowrap; }
+.store-links a:hover { background: var(--blue); }
+.book-byline { font-size: 11px; margin: 16px 0 0; color: var(--muted-ink); }
+.frontlines-section { display: grid; gap: 34px; }
+.frontlines-art { margin: 0; overflow: hidden; border: var(--comic-border); border-radius: 13px; box-shadow: 5px 5px 0 var(--ink); background: var(--paper); }
+.frontlines-art img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 1; }
+.frontlines-art figcaption { border-top: var(--comic-border); padding: 12px 18px; font: 700 17px 'Fredoka', sans-serif; text-transform: uppercase; text-align: center; letter-spacing: .5px; }
+.frontlines-copy { display: grid; grid-template-columns: 1fr 1.1fr; gap: 45px; align-items: start; padding-inline: 8px; }
+.frontlines-copy .eyebrow { line-height: 1.5; }
+.frontlines-copy .section-title { font-size: clamp(30px, 3.3vw, 47px); line-height: 1.1; margin-bottom: 10px; }
+.frontlines-copy .brush-heading::before { background: var(--yellow); }
+.frontlines-story > p { font-size: 16px; line-height: 1.65; margin: 0 0 14px; }
+.topic-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin-top: 25px; }
+.topic-tags li { padding: 6px 9px; border: 1.5px solid var(--ink); border-radius: 5px; font-size: 11px; font-weight: 900; background: var(--paper); }
+.topic-tags li:nth-child(2n) { background: var(--blue); }
+.final-cta { border-block: var(--comic-border); background: var(--orange); background-image: radial-gradient(#fff6 1.5px, transparent 1.5px); background-size: 7px 7px; padding-block: 40px; }
+.final-cta > div { display: flex; justify-content: space-between; align-items: center; gap: 25px; }
+.final-cta h2 { font: 700 clamp(30px, 3.5vw, 50px)/1.1 'Fredoka', sans-serif; text-transform: uppercase; margin: 0 0 8px; transform: rotate(-2deg); }
+.final-cta p { font-size: 16px; font-weight: 800; margin: 0; }
+.final-cta .comic-button { flex-shrink: 0; background: var(--yellow); }
+.final-spark { font-size: 60px; line-height: 1; }
+.footer-shell { background: var(--ink); }
+.footer-shell .site-footer { color: var(--paper); padding-block: 35px; }
+.footer-brand { font: 700 21px 'Fredoka', sans-serif; text-decoration: none; }
+.footer-shell .site-footer p { font-size: 11px; margin-top: 7px; color: #ddd2b5; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 24px; }
+.site-footer nav a { font-size: 11px; text-transform: uppercase; font-weight: 800; text-decoration: none; }
+.site-footer nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.reader-page { padding-block: 35px 60px; min-height: 65vh; }
+.reader-back { font-weight: 800; text-underline-offset: 4px; }
+.reader-heading { text-align: center; margin-block: 35px 25px; }
+.reader-heading .eyebrow { justify-content: center; margin-bottom: 12px; }
+.reader-heading h1 { font: 700 clamp(30px, 5vw, 48px)/1.1 'Fredoka', sans-serif; margin: 0; }
+.reader-image { display: block; width: min(100%, 760px); height: auto; margin-inline: auto; border: var(--comic-border); border-radius: 6px; }
+.reader-nav { display: flex; justify-content: space-between; gap: 12px; max-width: 760px; margin: 25px auto 0; }
+.reader-nav a { font-weight: 900; font-size: 14px; padding-block: 12px; text-underline-offset: 5px; }
+.reader-error { display: grid; gap: 20px; justify-items: center; padding: 60px 10px; }
+@media (max-width: 1000px) {
+  .character-grid { gap: 14px; }
+  .character-copy { padding: 13px; min-height: 150px; }
+  .character-copy h3 { font-size: 24px; }
+  .character-copy p { font-size: 13px; }
+  .book-section { padding: 30px; gap: 25px; }
+  .book-showcase { min-height: 470px; }
+  .sales-cover { width: 75%; }
+  .sales-burst { width: 120px; height: 120px; top: 10px; }
+  .book-copy .eyebrow { font-size: 9px; }
+  .book-copy .comic-button { font-size: 16px; padding-inline: 12px; gap: 12px; }
+  .book-stats { gap: 15px; }
+  .book-stats > div { padding-right: 10px; }
+  .frontlines-section { gap: 30px; }
+  .final-spark { display: none; }
+  .site-footer nav { gap: 14px; }
+}
+@media (max-width: 767px) {
+  .page-section { margin-block: 45px; }
+  .section-heading-row { gap: 20px; }
+  .section-title { font-size: 36px; }
+  .margin-note { font-size: 9px; margin: 0; }
+  .character-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .character-copy { min-height: 115px; }
+  .character-copy p { max-width: none; }
+  .featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 14px; }
+  .featured-section .section-heading-row { flex-wrap: wrap; }
+  .featured-section .comic-button { font-size: 13px; padding: 12px; }
+  .featured-caption { padding: 12px 10px; gap: 8px; align-items: flex-start; min-height: 65px; }
+  .featured-caption h3 { font-size: 14px; }
+  .featured-caption > span:first-child { font-size: 18px; }
+  .featured-caption > span:last-child { display: none; }
+  .read-sticker { font-size: 9px; padding: 4px 7px; bottom: 7px; right: 7px; }
+  .book-section { grid-template-columns: 1fr; gap: 20px; padding: 25px; }
+  .book-showcase { min-height: 440px; }
+  .sales-cover { width: 230px; }
+  .sales-burst { left: 0; top: 10px; }
+  .bonus-sticker { right: 0; bottom: 10px; font-size: 17px; }
+  .book-spark { right: 0; }
+  .book-copy .section-title { font-size: 66px; }
+  .book-copy .eyebrow { font-size: 10px; }
+  .book-copy .comic-button { font-size: 19px; }
+  .book-stats { justify-content: space-between; }
+  .frontlines-section { grid-template-columns: 1fr; gap: 35px; }
+  .frontlines-copy { grid-template-columns: 1fr; gap: 16px; padding-inline: 4px; }
+  .frontlines-art figcaption { font-size: 13px; padding: 10px; }
+  .frontlines-copy .section-title { font-size: 40px; }
+  .final-cta > div { flex-direction: column; text-align: center; gap: 22px; }
+  .final-cta h2 { font-size: 38px; }
+  .footer-shell .site-footer { flex-direction: column; align-items: center; text-align: center; gap: 23px; }
+  .footer-shell .site-footer nav { justify-content: center; gap: 22px; }
+  .reader-nav a { font-size: 12px; }
+}
+@media (max-width: 380px) {
+  .section-title { font-size: 30px; }
+  .margin-note { display: none; }
+  .character-copy h3 { font-size: 22px; }
+  .character-copy p { font-size: 12px; }
+  .character-copy { min-height: 130px; }
+  .book-section { padding: 20px 17px; }
+  .book-showcase { min-height: 380px; }
+  .sales-cover { width: 195px; }
+  .sales-burst { left: -10px; width: 105px; height: 105px; }
+  .sales-burst strong { font-size: 28px; }
+  .sales-burst span { font-size: 10px; }
+  .book-copy .comic-button { font-size: 16px; }
+  .frontlines-copy .section-title { font-size: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .featured-card { transition: none; } }
