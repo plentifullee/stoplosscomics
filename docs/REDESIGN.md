@@ -70,3 +70,16 @@ NFT and Token were local state tabs in Archive, never independent path routes. T
 Artwork: optimized 400px previews of local Satoshi collection items #0002, #0003, and #0024, plus four supplied community token images (`token/pumpfun/wagdonalds.png`, `lightning.png`, `grump.png`, and `hopium.png`), each optimized to a 480px WebP. The token artwork uses a 2×2 grid with uncropped images and the annotation below the tiles. Original source files are unchanged. Decoration is CSS; all added images lazy-load and have dimensions.
 
 Validation: build and lint pass; Chrome checks passed at 320, 390, 768, 860, 1024, and 1440px with no horizontal overflow. Tested dropdown keyboard/Tab/Escape/outside click, mobile separation, both destinations at all three tracking locations, legacy hash aliases, and Comics/Art archive loading. No runtime errors. External navigation was intercepted for event tests rather than opening marketplaces or sending live analytics.
+
+
+## Comic archive redesign
+
+`#comics`, including the homepage’s Enter the chaos link, now renders `ComicsArchive`. The cream comic banner, selected-comic preview, Volume 1 sidebar, thumbnail grid, and final book CTA follow the supplied archive mockup. Portrait originals are shown intact in the preview rather than fabricated into horizontal strips.
+
+The archive reads the existing catalog, displays 80 episodes, and preserves the instruction image as a separate reading-guide link. Actual catalog titles and IDs are used. Search matches title, episode number, and description when supplied; Newest/Oldest sort by episode number, and Featured uses the homepage’s curated IDs. Dates, popularity, and topical tags are not fabricated because the catalog has none. Twelve cards load at a time; offscreen thumbnails are lazy-loaded.
+
+Preview has previous/next controls, a clipboard share action with a copyable URL fallback, and a Full reader link. Cards open the existing `ComicReader` at `#comic/ID?from=archive`; its archive return link and older/newer navigation preserve that context. Homepage reader links keep their existing return-to-featured behavior. Archive search, order, loaded count, and selection persist for the browser session, with graceful fallback if storage is unavailable. Empty search and failed preview states are handled.
+
+Art remains available at `#art` through Explore art, using the existing gallery, category filters, search, and fullscreen viewer. The legacy viewer is now dedicated to Art. NFT/token catalogs remain untouched. Skip-to-content now focuses the current page without switching hash routes.
+
+Validation: build/lint and Chrome checks at 320, 390, 768, 1024, and 1440 px; search, no-results reset, paging, sorting, featured filter, preview selection, reader reload/return state, clipboard sharing, Art loading, and older/newer reader continuity. No runtime errors in checks. Publish this archive update with the standard `npm run deploy` workflow after pushing source to `main`.

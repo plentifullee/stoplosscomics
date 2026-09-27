@@ -5,7 +5,7 @@ export default function FeaturedComics() {
   return <section id="featured" className="featured-section section-container page-section" aria-labelledby="featured-title">
     <div className="section-heading-row"><div><h2 id="featured-title" className="section-title brush-heading blue-brush">Start here</h2><p className="section-subtitle">Six featured comics to get you hooked.</p></div><a href="#comics" className="comic-button" onClick={() => trackEvent('comic_archive_click', { location: 'featured' })}>Read all comics <span aria-hidden="true">→</span></a></div>
     <div className="featured-grid">{featuredComics.map((comic, index) => <a href={`#comic/${comic.id}`} key={comic.id} className="featured-card" onClick={() => trackEvent('comic_open', { comic_id: comic.id, location: 'featured' })}>
-      <div className="featured-image"><img src={comic.thumbnail} width="400" height="600" alt={`Preview of ${comic.title}`} loading="lazy" /><span className="read-sticker">Read comic <span aria-hidden="true">↗</span></span></div>
+      <div className="featured-image"><img src={comic.thumbnail} srcSet={`/images/comics/${comic.id}-thumb-240.webp 240w, ${comic.thumbnail} 400w, /images/comics/${comic.id}-thumb-480.webp 480w, /images/comics/${comic.id}-thumb-800.webp 800w`} sizes="(max-width: 767px) calc((100vw - 52px) / 2), (max-width: 1360px) calc((100vw - 128px) / 3), 408px" decoding="async" width="400" height="600" alt={`Preview of ${comic.title}`} loading="lazy" /><span className="read-sticker">Read comic <span aria-hidden="true">↗</span></span></div>
       <div className="featured-caption"><span>{String(index + 1).padStart(2, '0')}</span><h3>{comic.title}</h3><span aria-hidden="true">→</span></div>
     </a>)}</div>
   </section>;

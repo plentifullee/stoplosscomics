@@ -17,9 +17,9 @@ export default function Hero() {
         <span className="art-spark spark-one" aria-hidden="true">✧</span>
         <span className="art-spark spark-two" aria-hidden="true">✦</span>
         <span className="art-spark spark-three" aria-hidden="true">✧</span>
-        <div className="speech-bubble">YOU COULD<br />JUST BUY IT.<span aria-hidden="true">↙</span></div>
+        <div className="speech-bubble">YOU COULD<br />JUST BUY IT.</div>
         <a className="hero-book" href="https://books2read.com/stoplosscomicsvolume1" onClick={() => trackEvent('book_cta_click', { location: 'hero_cover' })} aria-label="Get StopLoss Comics Volume 1">
-          <img src="/images/volume-1.webp" width="1024" height="1536" alt="StopLoss Comics Volume 1 by Plentiful Lee, featuring Max, Luna, Chad, and Satoshi" fetchPriority="high" />
+          <img src="/images/volume-1.webp" srcSet="/images/volume-1-384.webp 384w, /images/volume-1-768.webp 768w, /images/volume-1.webp 1024w" sizes="(max-width: 650px) 215px, (max-width: 1100px) 31vw, 355px" width="1024" height="1536" decoding="async" loading="eager" alt="StopLoss Comics Volume 1 by Plentiful Lee, featuring Max, Luna, Chad, and Satoshi" fetchPriority="high" />
         </a>
         <div className="starburst"><strong>100%</strong><span>BAD IDEAS.<br />GOOD COMICS.</span></div>
         <p className="art-caption">THE GANG’S ALL HERE. <span aria-hidden="true">⤴</span></p>

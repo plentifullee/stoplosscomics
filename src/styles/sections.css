@@ -15,7 +15,6 @@
 .portrait-frame { position: relative; aspect-ratio: 1.2; overflow: hidden; background: var(--paper); border-bottom: 2px solid var(--ink); }
 .portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .character-satoshi img { object-position: center 28%; }
-.character-doodle { position: absolute; top: 9px; right: 12px; font: 700 36px 'Fredoka', sans-serif; transform: rotate(12deg); color: #59442e; }
 .character-copy { padding: 17px 18px 21px; min-height: 139px; background-image: radial-gradient(#191a1512 1px, transparent 1px); background-size: 6px 6px; }
 .character-copy h3 { font: 700 29px 'Fredoka', sans-serif; text-transform: uppercase; margin: 0 0 6px; }
 .character-copy p { font-size: 14px; font-weight: 800; line-height: 1.4; margin: 0; max-width: 230px; }

@@ -135,6 +135,9 @@ body { font-family: 'Nunito', system-ui, sans-serif; color: var(--ink); backgrou
   .site-footer { flex-wrap: wrap; justify-content: center; gap: 8px 20px; text-align: center; font-size: 10px; padding-top: 14px; }
   .site-footer p { order: 3; width: 100%; }
 }
+/* Small callout offsets preserve the original compact hero layout. */
+.hero-art .speech-bubble { margin-top: -10px; }
+.hero-art .art-caption { translate: 0 10px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

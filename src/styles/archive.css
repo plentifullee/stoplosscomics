@@ -1,0 +1,97 @@
+.comics-archive { background: var(--cream); background-image: radial-gradient(#e2a84325 .8px, transparent .8px); background-size: 7px 7px; overflow: clip; }
+.archive-banner { padding-block: 48px 38px; display: grid; grid-template-columns: 1.4fr 1fr; align-items: center; gap: 25px; }
+.archive-banner h1 { font: 700 clamp(48px, 5.9vw, 82px)/.95 'Fredoka', sans-serif; text-transform: uppercase; letter-spacing: -2px; margin: 0 0 22px; width: fit-content; transform: rotate(-2deg); }
+.archive-banner h1::before { background: var(--yellow); }
+.archive-banner > div > p:last-child { font-size: 21px; font-weight: 800; margin: 0; }
+.archive-cast { position: relative; display: flex; align-items: end; padding-top: 36px; isolation: isolate; }
+.archive-cast::before { content: ''; position: absolute; inset: -20px; z-index: -1; background: repeating-conic-gradient(from 10deg at 50% 70%, #ffd15199 0deg 10deg, transparent 10deg 20deg); mask-image: radial-gradient(ellipse, black, transparent 70%); }
+.archive-cast img { width: 27%; height: auto; aspect-ratio: 1; object-fit: cover; border: 3px solid var(--ink); border-radius: 50%; margin-left: -3%; background: var(--paper); transform: rotate(-7deg); }
+.archive-cast img:nth-child(2n) { transform: translateY(14px) rotate(7deg); }
+.archive-cast img:last-of-type { object-position: 50% 30%; }
+.archive-cast > span { position: absolute; top: -10px; right: 0; border: 2px solid var(--ink); border-radius: 18px 18px 18px 3px; background: var(--paper); padding: 9px 15px; font: 700 14px/1.15 'Fredoka', sans-serif; text-transform: uppercase; transform: rotate(6deg); }
+.archive-content { padding-bottom: 35px; }
+.archive-toolbar { display: flex; align-items: center; gap: 14px; padding-block: 23px; border-top: var(--comic-border); }
+.archive-search { display: flex; align-items: center; flex: 1; min-width: 0; background: var(--paper); border: var(--comic-border); border-radius: 12px; padding-inline: 14px; }
+.archive-search > span[aria-hidden] { font-size: 29px; }
+.archive-search input { min-width: 0; width: 100%; border: 0; background: transparent; padding: 13px 10px; color: var(--ink); font-size: 15px; }
+.archive-filters { display: flex; gap: 9px; }
+.archive-filters button, .spotlight-controls button, .spotlight-controls a { border: 2px solid var(--ink); background: var(--paper); border-radius: 10px; padding: 12px 17px; font: 700 15px 'Fredoka', sans-serif; color: var(--ink); text-decoration: none; cursor: pointer; }
+.archive-filters button[aria-pressed=true], .spotlight-controls .next-comic { background: var(--orange); box-shadow: 2px 2px 0 var(--ink); }
+.archive-art-link { font-size: 12px; font-weight: 900; text-underline-offset: 4px; white-space: nowrap; padding: 12px 0; }
+.archive-columns { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 26px; align-items: start; }
+.archive-main-column { min-width: 0; }
+.archive-spotlight { border: var(--comic-border); border-radius: 13px; background: var(--paper); padding: 18px; box-shadow: 4px 4px 0 var(--ink); scroll-margin-top: 20px; }
+.spotlight-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.episode-badge { display: inline-block; flex-shrink: 0; font: 700 15px 'Fredoka', sans-serif; background: var(--yellow); border-radius: 7px; padding: 5px 8px; }
+.spotlight-heading h2 { font: 700 clamp(22px, 2.4vw, 32px)/1.1 'Fredoka', sans-serif; margin: 0; }
+.spotlight-label { margin-left: auto; font-size: 10px; text-transform: uppercase; font-weight: 900; white-space: nowrap; }
+.spotlight-image { display: flex; align-items: center; justify-content: center; min-height: 300px; border: 2px solid var(--ink); border-radius: 7px; overflow: hidden; background: #ffedbf; background-image: radial-gradient(#b9791a20 1px, transparent 1px); background-size: 6px 6px; }
+.spotlight-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: 630px; object-fit: contain; }
+.spotlight-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
+.spotlight-controls > span { margin-inline: auto; font-size: 12px; font-weight: 900; }
+.spotlight-controls button:disabled { cursor: default; opacity: .45; box-shadow: none; }
+.share-status { font-size: 12px; overflow-wrap: anywhere; margin: 10px 0 0; }
+.share-status:empty { display: none; }
+.archive-list { margin-top: 40px; }
+.archive-list .section-heading-row { gap: 15px; }
+.archive-list .section-title { font-size: 42px; }
+.archive-list .section-heading-row p { font-size: 12px; font-weight: 900; text-align: right; }
+.archive-comic-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }
+.archive-comic-card { min-width: 0; overflow: hidden; border: 2px solid var(--ink); border-radius: 9px; background: var(--paper); box-shadow: 3px 3px 0 #191a1520; display: flex; flex-direction: column; }
+.archive-comic-card.is-selected { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.archive-comic-card > a { text-decoration: none; display: block; flex: 1; }
+.archive-comic-card > a:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+.archive-thumbnail { aspect-ratio: 1.2; overflow: hidden; background: #ffedbf; border-bottom: 2px solid var(--ink); }
+.archive-thumbnail img { width: 100%; height: auto; display: block; }
+.archive-card-title { display: flex; align-items: start; gap: 7px; padding: 12px 9px; }
+.archive-card-title h3 { font: 600 16px/1.25 'Fredoka', sans-serif; margin: 0; }
+.archive-card-title .episode-badge { font-size: 11px; padding: 3px 5px; }
+.preview-comic-button { width: 100%; border: 0; border-top: 1px solid #191a1520; padding: 9px; display: flex; justify-content: space-between; background: var(--paper); color: var(--muted-ink); font: 800 11px 'Nunito', sans-serif; cursor: pointer; }
+.preview-comic-button:hover { background: var(--yellow); }
+.archive-load-more { display: flex; margin: 28px auto 0; font-size: 17px; }
+.archive-book-promo { border: var(--comic-border); border-radius: 12px; padding: 18px 14px; background: var(--yellow); background-image: repeating-conic-gradient(from 10deg at 50% 35%, #fff4c880 0deg 9deg, transparent 9deg 20deg); }
+.archive-book-promo h2 { font: 700 27px/1 'Fredoka', sans-serif; text-align: center; text-transform: uppercase; margin: 0 0 24px; transform: rotate(-4deg); }
+.archive-book-promo img { display: block; width: 85%; height: auto; margin: 0 auto 25px; transform: rotate(-6deg); border: 2px solid var(--ink); box-shadow: 4px 4px 0 #191a1550; }
+.archive-book-promo ul { padding-left: 20px; font-weight: 800; font-size: 13px; line-height: 1.8; }
+.archive-book-promo .comic-button { width: 100%; font-size: 15px; padding: 12px; gap: 12px; }
+.archive-cat { margin-top: 30px; position: relative; border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; }
+.archive-cat img { width: 100%; height: auto; display: block; }
+.archive-cat p { position: absolute; top: 5px; left: 8px; z-index: 1; background: var(--paper); padding: 10px 15px; border: 2px solid var(--ink); border-radius: 18px 18px 3px 18px; font: 700 16px 'Fredoka', sans-serif; text-transform: uppercase; transform: rotate(-7deg); }
+.archive-empty { padding: 50px 25px; background: var(--paper); border: var(--comic-border); border-radius: 12px; text-align: center; }
+.archive-empty h2 { font: 700 32px 'Fredoka', sans-serif; }
+.archive-image-error { display: block; padding: 25px; text-align: center; font-size: 13px; }
+.archive-reading-guide { font-size: 13px; margin-top: 30px; font-weight: 800; }
+@media (max-width: 1100px) {
+  .archive-columns { grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; }
+  .archive-filters button { padding-inline: 12px; }
+  .archive-comic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .spotlight-controls button, .spotlight-controls a { font-size: 12px; padding: 10px; }
+  .spotlight-label { display: none; }
+}
+@media (max-width: 767px) {
+  .archive-banner { grid-template-columns: 1fr; padding-top: 35px; gap: 25px; }
+  .archive-banner h1 { font-size: clamp(45px, 10vw, 70px); }
+  .archive-banner > div > p:last-child { font-size: 17px; }
+  .archive-banner .eyebrow { font-size: 9px; letter-spacing: 1px; }
+  .archive-cast { width: min(100%, 390px); margin: 0 auto; }
+  .archive-cast img { width: 24%; }
+  .archive-toolbar { flex-wrap: wrap; gap: 15px; }
+  .archive-search { flex-basis: 100%; }
+  .archive-search input { font-size: 13px; }
+  .archive-art-link { display: block; margin-left: auto; }
+  .archive-columns { grid-template-columns: 1fr; }
+  .archive-spotlight { padding: 12px; }
+  .spotlight-image img { max-height: none; width: 100%; }
+  .spotlight-controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .spotlight-controls > span { grid-column: 2 / 4; }
+  .spotlight-controls .next-comic { grid-column: 4; grid-row: 1; }
+  .spotlight-controls a { grid-column: 1 / 3; grid-row: 2; text-align: center; }
+  .spotlight-controls button:nth-last-child(2) { grid-column: 3 / 5; grid-row: 2; }
+  .spotlight-controls > span { font-size: 10px; }
+  .archive-list .section-title { font-size: 32px; }
+  .archive-comic-grid { gap: 15px; }
+  .archive-card-title { flex-direction: column; }
+  .archive-book-sidebar { margin: 25px auto 0; max-width: 350px; width: 100%; }
+  .archive-cat { display: none; }
+}
+@media (max-width: 380px) { .archive-filters { gap: 6px; } .archive-filters button { font-size: 13px; padding: 10px; } .archive-art-link { margin-left: 0; } .spotlight-controls a { order: 2; flex-basis: 100%; text-align: center; } }

@@ -14,7 +14,6 @@ const DATA_SOURCES = {
 };
 
 const TABS = [
-  { id: "comic", label: "Comic" },
   { id: "art", label: "Art" },
 ];
 
@@ -89,7 +88,7 @@ function Archive() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [activeTab, setActiveTab] = useState("comic");
+  const [activeTab, setActiveTab] = useState("art");
   const [searchQuery, setSearchQuery] = useState("");
 
   const [fullscreenIndex, setFullscreenIndex] = useState(null); // index in filteredItems
