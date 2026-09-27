@@ -5,6 +5,31 @@
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/comic/999.webp"
   },
   {
+    "id": "undo-protocol",
+    "title": "Undo Protocol",
+    "imageUrl": "/images/comics/undo-protocol.webp"
+  },
+  {
+    "id": "total-supply-deleted",
+    "title": "Total Supply Deleted",
+    "imageUrl": "/images/comics/total-supply-deleted.webp"
+  },
+  {
+    "id": "meditate-coin",
+    "title": "Meditate Coin",
+    "imageUrl": "/images/comics/meditate-coin.webp"
+  },
+  {
+    "id": "maximum-upside",
+    "title": "Maximum Upside",
+    "imageUrl": "/images/comics/maximum-upside.webp"
+  },
+  {
+    "id": "the-first-rule",
+    "title": "The First Rule",
+    "imageUrl": "/images/comics/the-first-rule.webp"
+  },
+  {
     "id": "150",
     "title": "Yoyo Protocol",
     "imageUrl": "https://raw.githubusercontent.com/plentifullee/stoplosscomics-assets/main/comic/150.webp"

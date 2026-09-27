@@ -1,6 +1,6 @@
 import catalog from '../../public/comic.json';
 
-const featuredIds = ['76', '149', '106', '128', '138', '95'];
+const featuredIds = ['undo-protocol', 'total-supply-deleted', 'meditate-coin', 'maximum-upside', 'the-first-rule', '107'];
 export const comics = catalog.filter((comic) => comic.id !== '999');
 export const featuredComics = featuredIds.map((id) => {
   const comic = catalog.find((entry) => entry.id === id);
