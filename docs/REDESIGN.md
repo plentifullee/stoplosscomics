@@ -83,3 +83,11 @@ Preview has previous/next controls, a clipboard share action with a copyable URL
 Art remains available at `#art` through Explore art, using the existing gallery, category filters, search, and fullscreen viewer. The legacy viewer is now dedicated to Art. NFT/token catalogs remain untouched. Skip-to-content now focuses the current page without switching hash routes.
 
 Validation: build/lint and Chrome checks at 320, 390, 768, 1024, and 1440 px; search, no-results reset, paging, sorting, featured filter, preview selection, reader reload/return state, clipboard sharing, Art loading, and older/newer reader continuity. No runtime errors in checks. Publish this archive update with the standard `npm run deploy` workflow after pushing source to `main`.
+
+## Arts gallery
+
+The `#art` route now uses `ArtsPage.jsx` and `styles/arts.css`, with Arts links in the header and footer. The gallery preserves all 24 records in `public/art.json`, grouped under their existing Team, GM, and StopLoss categories. It supports title search, category filters, batches of 12, and a native modal viewer with previous/next controls, arrow keys, Escape, and focus restoration. The hero uses existing artwork in CSS poster frames.
+
+Gallery previews are local 320px and 640px WebP variants under `public/images/art`, encoded at quality 82 from the catalog's original public WebP files. All 48 previews total about 2.1 MB; responsive selection and lazy loading limit actual transfers. Original images load on demand in the viewer. The layout uses four columns on desktop, three on tablets, and two on phones.
+
+Validated with production build, ESLint, and Chrome interaction checks at widths 320, 390, 768, 860, 1024, and 1440 pixels. Search, filters, load more, viewer navigation, and Escape were checked without runtime errors or horizontal page overflow.

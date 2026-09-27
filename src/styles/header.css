@@ -1,0 +1,17 @@
+/* Reserve the expanded header's space so compact mode never shifts the page. */
+.header-dock { position: sticky; top: 0; z-index: 30; padding-top: 24px; height: 106px; pointer-events: none; }
+.header-dock .site-header { margin-top: 0; pointer-events: auto; transition: padding .18s, border-radius .18s, box-shadow .18s; }
+.header-dock.is-compact { padding-top: 8px; }
+.header-dock.is-compact .site-header { padding-block: 5px; border-radius: 10px; box-shadow: 0 5px 16px #191a151c; }
+.header-dock.is-compact .wordmark { font-size: 21px; }
+.header-dock.is-compact .header-cta { padding-block: 8px; font-size: 13px; }
+.header-dock .primary-nav { gap: 19px; }
+.header-dock .primary-nav > a, .header-dock .header-more > button { position: relative; isolation: isolate; white-space: nowrap; padding-inline: 5px; }
+.header-dock .primary-nav > a[aria-current]::before, .header-dock .header-more > button[aria-current]::before { content: ''; position: absolute; z-index: -1; inset: 3px -5px; background: #ffc52e; transform: rotate(-3deg); clip-path: polygon(7% 4%, 89% 0, 86% 8%, 98% 12%, 94% 24%, 100% 31%, 94% 43%, 99% 55%, 92% 64%, 96% 79%, 86% 85%, 89% 96%, 13% 100%, 15% 93%, 1% 91%, 6% 77%, 0 67%, 6% 55%, 1% 42%, 8% 33%, 3% 19%, 13% 15%); }
+.header-dock .nav-section-start { margin-left: 8px; }
+.header-dock .nav-section-start::after { content: ''; position: absolute; left: -15px; top: 9px; bottom: 9px; width: 1px; background: #191a1533; }
+html { scroll-padding-top: 90px; }
+@media (min-width: 851px) and (max-width: 1200px) { .header-dock .primary-nav { gap: 8px; } .header-dock .site-header { gap: 10px; } .header-dock .wordmark { font-size: 19px; } .header-dock .wordmark i { display: none; } .header-dock .primary-nav a, .header-dock .primary-nav button { font-size: 11px; letter-spacing: 0; } }
+@media (max-width: 850px) { .header-dock .primary-nav { gap: 0; } .header-dock .primary-nav > a, .header-dock .header-more > button { padding: 13px; } .header-dock .primary-nav > a[aria-current]::before, .header-dock .header-more > button[aria-current]::before { right: auto; width: 125px; left: 0; } .header-dock .nav-section-start { margin-left: 0; margin-top: 8px; border-top: 1px solid #191a1533; } .header-dock .nav-section-start::after { display: none; } .header-dock.is-compact .wordmark { font-size: 19px; } }
+@media (max-width: 650px) { .header-dock { padding-top: 12px; height: 80px; } .header-dock.is-compact { padding-top: 5px; } .header-dock.is-compact .site-header { padding-block: 4px; } .header-dock.is-compact .wordmark { font-size: 18px; } .header-dock.is-compact .header-cta { font-size: 11px; } }
+@media (prefers-reduced-motion: reduce) { .header-dock .site-header { transition: none; } }
