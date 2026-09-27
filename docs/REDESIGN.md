@@ -6,7 +6,7 @@ React 19 + Vite, with no new dependencies or backend. The original gallery lives
 
 All four catalogs remain unchanged in `public/`. The archive continues fetching their existing jsDelivr URLs, with original images hosted by `plentifullee/stoplosscomics-assets` on GitHub. The homepage and new individual reader derive titles and IDs directly from the bundled `public/comic.json` catalog through `src/data/comics.js`.
 
-Google Analytics G-9630W1Y3FM and AdSense remain in `index.html`. `src/lib/analytics.js` handles book CTAs, retailer links, archive entry, character navigation, and comic entry/navigation. Social links were not present in the original site, so none were invented.
+Google Analytics G-9630W1Y3FM remains in `index.html`. AdSense and legacy ad cards have been removed. `src/lib/analytics.js` handles book CTAs, retailer links, archive entry, character navigation, and comic entry/navigation. Social links were not present in the original site, so none were invented.
 
 Deployment remains `npm run deploy` (build, then gh-pages publishing of dist). `public/CNAME` retains stoplosscomics.com and Vite retains base `/`. Published to the existing `gh-pages` branch with `npm run deploy` on September 27, 2026. The custom domain remains https://stoplosscomics.com. Source is maintained on `main`; built assets are published separately to `gh-pages`.
 
