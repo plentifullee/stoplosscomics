@@ -30,6 +30,6 @@ export default function Hero() {
         <ul className="category-list" aria-label="Comic topics">{categories.map(([icon, label]) => <li key={label}><span aria-hidden="true">{icon}</span>{label}</li>)}</ul>
       </div>
     </section>
-    <div className="universe-strip" aria-label="Welcome to the StopLoss universe"><div className="section-container"><span>HIGH HOPES.</span><i aria-hidden="true">✦</i><span>LOW CONVICTION.</span><i aria-hidden="true">✦</i><span>GREAT STORIES.</span><i aria-hidden="true">✦</i><a href="#comics" onClick={() => trackEvent('comic_archive_click', { location: 'hero_strip' })}>ENTER THE CHAOS <span aria-hidden="true">→</span></a></div></div>
+    <div className="universe-strip" aria-label="Welcome to the StopLoss universe"><div className="section-container"><span>HIGH HOPES</span><i aria-hidden="true">✦</i><span>LOW CONVICTION</span><i aria-hidden="true">✦</i><span>GREAT STORIES</span><i aria-hidden="true">✦</i><a href="#comics" onClick={() => trackEvent('comic_archive_click', { location: 'hero_strip' })}>ENTER THE CHAOS <span aria-hidden="true">→</span></a></div></div>
   </>;
 }
